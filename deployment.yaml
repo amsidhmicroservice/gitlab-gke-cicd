@@ -23,8 +23,8 @@ spec:
         version: 1.0.0
     spec:
       containers:
-        - image: gcr.io/master-legacy-374203/gitlab-gke-cicd
-          imagePullPolicy: IfNotPresent
+        - image: gcr.io/master-legacy-374203/gitlab-gke-cicd:<VERSION>
+          imagePullPolicy: Always
           name: gitlab-gke-cicd
           ports:
             - name: tomcat-port
