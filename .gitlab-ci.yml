@@ -41,7 +41,6 @@ package_job:
     - echo "Maven packaging started"
     - "mvn package"
 
-
 docker_build_push_job:
   stage: docker_build_push
   image: docker:latest
