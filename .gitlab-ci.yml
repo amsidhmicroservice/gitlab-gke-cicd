@@ -49,7 +49,6 @@ docker_build_push_job:
   tags:
     - docker
   variables:
-    DOCKER_HOST: tcp://docker:2375/
     DOCKER_TLS_CERTDIR: "/certs"
   before_script:
     - docker info
