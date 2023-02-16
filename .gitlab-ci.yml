@@ -54,6 +54,7 @@ docker_build_push_job:
     - docker info
     - echo "$SERVICE_ACCOUNT_KEY" > key.json
     - cat key.json
+    - chmod 400 $SERVICE_ACCOUNT_KEY
     - docker login -u $SERVICE_ACCOUNT_KEY --password-stdin https://gcr.io
   script:
     - echo "Building docker image"
