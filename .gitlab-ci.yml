@@ -53,7 +53,8 @@ docker_build_push_job:
   before_script:
     - docker info
     - echo "$SERVICE_ACCOUNT_KEY" > key.json
-    - docker login -u _json_key --password-stdin https://gcr.io < key.json
+    - cat key.json
+    - docker login -u $SERVICE_ACCOUNT_KEY --password-stdin https://gcr.io
   script:
     - echo "Building docker image"
     - docker build --tag $REGISTRY_HOSTNAME/$DOCKER_IMAGE_NAME:$CI_COMMIT_SHORT_SHA .
